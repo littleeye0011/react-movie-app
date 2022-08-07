@@ -15,6 +15,20 @@
   justify-content: center;
 }
 
+.searchContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchForm {
+  display: flex;
+  justify-content: space-around;
+}
+.searchForm button {
+  margin-left: 1rem;
+}
+
 @media only screen and (max-width: 1100px) {
   .list__cards {
     display: flex;

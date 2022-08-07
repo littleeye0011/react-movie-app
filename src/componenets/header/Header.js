@@ -1,4 +1,3 @@
-import React from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
 
@@ -19,8 +18,11 @@ const Header = () => {
         <Link to="/movies/top_rated" style={{ textDecoration: "none" }}>
           <span>TopRate</span>
         </Link>
-        <Link to="/movies/upcoming" style={{ textDecoration: "none" }}>
-          <span>Upcoming</span>
+        <Link to="/favorite" style={{ textDecoration: "none" }}>
+          <span>Favorite</span>
+        </Link>
+        <Link to="/search" style={{ textDecoration: "none" }}>
+          <span>Search</span>
         </Link>
       </div>
     </div>

@@ -11,6 +11,7 @@ const Movie = () => {
   useEffect(() => {
     getData();
     window.scrollTo(0, 0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getData = () => {
@@ -131,7 +132,7 @@ const Movie = () => {
               {company.logo_path && (
                 <span className="productionCompanyImage" key={company.id}>
                   <img
-                    className="movie__productionComapany"
+                    className="movie__productionCompany"
                     src={`https://image.tmdb.org/t/p/original${company.logo_path}`}
                     alt=""
                   />

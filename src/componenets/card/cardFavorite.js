@@ -4,14 +4,14 @@ import "react-loading-skeleton/dist/skeleton.css";
 import { Link } from "react-router-dom";
 import "./card.css";
 
-const Cards = (props) => {
+const CardFavorite = (props) => {
   const [isLoading, setIsLoading] = useState(true);
-  const AddFavoriteComponent = props.AddFavoriteComponent;
+  const RemoveFavoriteComponent = props.RemoveFavoriteComponent;
 
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 1000);
   }, []);
 
   return (
@@ -27,11 +27,11 @@ const Cards = (props) => {
           <div className="cards">
             <div
               onClick={() => {
-                props.handleAddFavoritesClick(props.movie);
+                props.handleRemoveFavoritesClick(props.movie);
               }}
               className="overlay"
             >
-              <AddFavoriteComponent />
+              <RemoveFavoriteComponent />
             </div>
             <img
               className="cards__img"
@@ -69,4 +69,4 @@ const Cards = (props) => {
   );
 };
 
-export default Cards;
+export default CardFavorite;
