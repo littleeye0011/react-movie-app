@@ -3,7 +3,6 @@ import Cards from "../card/card";
 import "./movieList.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AddFavorites from "./AddFavorites";
-import RemoveFavorites from "./RemoveFavorites";
 import { useParams } from "react-router-dom";
 
 const apiKey = "07faef61cdf5a6c5e2032f4c4e54c366";
@@ -53,15 +52,6 @@ const MovieList = () => {
     }
   };
 
-  const removeFavoriteMovie = (movie) => {
-    const newFavoriteList = favorites.filter(
-      (favorite) => favorite.id !== movie.id
-    );
-
-    setFavorites(newFavoriteList);
-    saveToLocalStorage(newFavoriteList);
-  };
-
   return (
     <div className="movie__list">
       <h2 className="list__title">{(type ? type : "POPULAR").toUpperCase()}</h2>
@@ -71,11 +61,8 @@ const MovieList = () => {
             movie={movie}
             key={idx}
             movies={movieList}
-            favoriteMovie={favorites}
             handleAddFavoritesClick={addFavoriteMovie}
-            handleRemoveFavoritesClick={removeFavoriteMovie}
             AddFavoriteComponent={AddFavorites}
-            RemoveFavoriteComponent={RemoveFavorites}
           />
         ))}
       </div>
